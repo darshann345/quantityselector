@@ -1,0 +1,35 @@
+<html>
+
+<head>
+
+    <title>quantity selector</title>
+</head>
+
+<body>
+    <button onclick="decrease()">-</button>
+    <span id="qty">1</span>
+    <button onclick="increase()">+</button>
+    <p id="total">Total: ₹299</p>
+
+    <script>
+        let qty = 1;
+        const price = 299;
+
+        function update() {
+            document.getElementById('qty').textContent = qty;
+            document.getElementById('total').textContent = `Total: ₹${qty * price}`;
+        }
+
+        function increase() {
+            if (qty < 5) qty++;
+            update();
+        }
+
+        function decrease() {
+            if (qty > 1) qty--;
+            update();
+        }
+    </script>
+</body>
+
+</html>
